@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatDialogConfig } from '@angular/material/dialog';
 import { ProductAddComponent } from '../product-add/product-add.component';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -24,8 +25,6 @@ export class MainComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProducts();
-
-   
   }
 
   loadProducts() {
@@ -36,6 +35,7 @@ export class MainComponentComponent implements OnInit {
         // this.paginator.pageSize = 25; // Set default page size selected to 25
       },
       (error) => {
+        this.displayError('Error fetching products');
         console.error('Error fetching products:', error);
       }
     );
@@ -63,5 +63,14 @@ export class MainComponentComponent implements OnInit {
 }
 
 
+
+displayError(message: string) {
+  Swal.fire({
+    title: 'Error',
+    text: message,
+    icon: 'error',
+    confirmButtonText:'OK'
+  });
+}
 
 }

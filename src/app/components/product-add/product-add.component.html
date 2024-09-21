@@ -1,0 +1,49 @@
+<div>
+
+    <h2 mat-dialog-title>ADD A PRODUCT</h2>
+
+    <mat-dialog-content [formGroup]="addform">
+      
+        <mat-form-field>
+            <mat-label>product Name</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>product Description</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>product Purchase Price</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>product Selling Price</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>product Quantity</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Product Active</mat-label>
+            <mat-select>
+              <mat-option value="0">0</mat-option>
+              <mat-option value="1">1</mat-option>
+            </mat-select>
+        </mat-form-field> 
+      
+          
+  
+    </mat-dialog-content>
+    
+    <mat-dialog-actions>
+        <button class="mat-raised-button"(click)="close()" style="margin-right: 10px;">Close</button>
+        <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+    </mat-dialog-actions>
+
+</div>

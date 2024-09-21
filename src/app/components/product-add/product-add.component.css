@@ -1,0 +1,9 @@
+.form-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .label-input {
+    margin-right: 8px; /* Adjust the margin as needed */
+  }
+  

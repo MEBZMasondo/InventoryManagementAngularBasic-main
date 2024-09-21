@@ -1,0 +1,62 @@
+
+
+<div class="main" style="margin-top: 100px;">
+
+    <div class="header">
+
+    </div>
+
+    <mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="productName">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.productName }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="productDescription">
+        <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.productDescription }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="productPurchasePrice">
+        <mat-header-cell *matHeaderCellDef>Purchase Price</mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.productPurchasePrice }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="productSellingPrice">
+        <mat-header-cell *matHeaderCellDef>Selling Price</mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.productSellingPrice }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="productQuantity">
+        <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.productQuantity }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="productActive">
+        <mat-header-cell *matHeaderCellDef>Active</mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.productActive == 1 ? 'Active' : 'Inactive' }}</mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator> -->
+    <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
+
+
+    <div class="footer">
+        <div name="buttonGroup" aria-label="Button group">
+            <button mat-raised-button color="primary" (click)="openAddProductDialog()" style="width: 200px; margin-right: 10px; margin-bottom: 5px;">Add Product</button>
+            <button mat-raised-button color="primary" style="width: 200px; margin-right: 10px;">Update Product</button>
+            <button mat-raised-button color="primary" style="width: 200px; margin-right: 10px; margin-bottom: 5px;">Update Stock Quantity</button>
+            <br>
+            <button mat-raised-button color="primary" style="width: 200px; margin-right: 10px;">Activate/Deactivate Product</button>
+            <button mat-raised-button color="primary" style="width: 200px; margin-right: 10px;">Refresh Data</button>
+            <button mat-raised-button color="primary" style="width: 200px; margin-right: 10px; margin-bottom: 5px;">View Low Stock</button>
+        <div>
+      </div>
+      
+
+  </div>
+  
